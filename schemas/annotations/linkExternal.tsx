@@ -3,26 +3,30 @@
  *
  * Read more: https://www.sanity.io/docs/customization#f924645007e1
  */
-import {EarthGlobeIcon} from '@sanity/icons'
-import React from 'react'
-import {defineField} from 'sanity'
+import { EarthGlobeIcon } from "@sanity/icons";
+import React from "react";
+import { defineField } from "sanity";
 
 export default defineField({
-  title: 'External Link',
-  name: 'annotationLinkExternal',
-  type: 'object',
+  title: "External Link",
+  name: "annotationLinkExternal",
+  type: "object",
   // @ts-ignore
   blockEditor: {
-    icon: () => <EarthGlobeIcon />,
+    icon: () => (
+      <EarthGlobeIcon onResize={undefined} onResizeCapture={undefined} />
+    ),
     // @ts-ignore
-    render: ({children}) => (
+    render: ({ children }) => (
       <span>
         <EarthGlobeIcon
           style={{
-            marginLeft: '0.05em',
-            marginRight: '0.1em',
-            width: '0.75em',
+            marginLeft: "0.05em",
+            marginRight: "0.1em",
+            width: "0.75em",
           }}
+          onResize={undefined}
+          onResizeCapture={undefined}
         />
         {children}
       </span>
@@ -30,17 +34,17 @@ export default defineField({
   },
   fields: [
     {
-      name: 'url',
-      title: 'URL',
-      type: 'url',
-      validation: (Rule) => Rule.required().uri({scheme: ['http', 'https']}),
+      name: "url",
+      title: "URL",
+      type: "url",
+      validation: (Rule) => Rule.required().uri({ scheme: ["http", "https"] }),
     },
     // Open in a new window
     {
-      title: 'Open in a new window?',
-      name: 'newWindow',
-      type: 'boolean',
+      title: "Open in a new window?",
+      name: "newWindow",
+      type: "boolean",
       initialValue: true,
     },
   ],
-})
+});

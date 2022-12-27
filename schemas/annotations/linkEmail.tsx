@@ -3,26 +3,30 @@
  *
  * Read more: https://www.sanity.io/docs/customization#f924645007e1
  */
-import {EnvelopeIcon} from '@sanity/icons'
-import React from 'react'
-import {defineField} from 'sanity'
+import { EnvelopeIcon } from "@sanity/icons";
+import React from "react";
+import { defineField } from "sanity";
 
 export default defineField({
-  title: 'Email link',
-  name: 'annotationLinkEmail',
-  type: 'object',
+  title: "Email link",
+  name: "annotationLinkEmail",
+  type: "object",
   // @ts-ignore
   blockEditor: {
-    icon: () => <EnvelopeIcon />,
+    icon: () => (
+      <EnvelopeIcon onResize={undefined} onResizeCapture={undefined} />
+    ),
     // @ts-ignore
-    render: ({children}) => (
+    render: ({ children }) => (
       <span>
         <EnvelopeIcon
           style={{
-            marginLeft: '0.05em',
-            marginRight: '0.1em',
-            width: '0.75em',
+            marginLeft: "0.05em",
+            marginRight: "0.1em",
+            width: "0.75em",
           }}
+          onResize={undefined}
+          onResizeCapture={undefined}
         />
         {children}
       </span>
@@ -31,9 +35,9 @@ export default defineField({
   fields: [
     // Email
     {
-      title: 'Email',
-      name: 'email',
-      type: 'email',
+      title: "Email",
+      name: "email",
+      type: "email",
     },
   ],
-})
+});

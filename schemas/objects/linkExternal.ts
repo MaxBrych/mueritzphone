@@ -1,52 +1,52 @@
-import {EarthGlobeIcon} from '@sanity/icons'
-import {defineField} from 'sanity'
+import { EarthGlobeIcon } from "@sanity/icons";
+import { defineField } from "sanity";
 
 export default defineField({
-  title: 'External Link',
-  name: 'linkExternal',
-  type: 'object',
-  icon: EarthGlobeIcon,
+  title: "External Link",
+  name: "linkExternal",
+  type: "object",
+  //icon: EarthGlobeIcon,
   fields: [
     // Title
     {
-      title: 'Title',
-      name: 'title',
-      type: 'string',
+      title: "Title",
+      name: "title",
+      type: "string",
       validation: (Rule) => Rule.required(),
     },
     // URL
     {
-      name: 'url',
-      title: 'URL',
-      type: 'url',
-      validation: (Rule) => Rule.required().uri({scheme: ['http', 'https']}),
+      name: "url",
+      title: "URL",
+      type: "url",
+      validation: (Rule) => Rule.required().uri({ scheme: ["http", "https"] }),
     },
     // Open in a new window
     {
-      title: 'Open in a new window?',
-      name: 'newWindow',
-      type: 'boolean',
+      title: "Open in a new window?",
+      name: "newWindow",
+      type: "boolean",
       initialValue: true,
     },
   ],
   preview: {
     select: {
-      title: 'title',
-      url: 'url',
+      title: "title",
+      url: "url",
     },
     prepare(selection) {
-      const {title, url} = selection
+      const { title, url } = selection;
 
-      let subtitle = []
+      let subtitle = [];
       if (url) {
-        subtitle.push(`→ ${url}`)
+        subtitle.push(`→ ${url}`);
       }
 
       return {
         // media: image,
-        subtitle: subtitle.join(' '),
+        subtitle: subtitle.join(" "),
         title,
-      }
+      };
     },
   },
-})
+});
