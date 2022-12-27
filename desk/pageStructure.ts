@@ -5,7 +5,7 @@ import { DocumentsIcon } from "@sanity/icons";
 export default defineStructure<ListItemBuilder>((S) =>
   S.listItem()
     .title("Pages")
-    .icon(DocumentsIcon)
+    //.icon(DocumentsIcon)
     .schemaType("page")
     .child(S.documentTypeList("page"))
 );
