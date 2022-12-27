@@ -6,7 +6,6 @@ import CardSection from "../../components/CardSection";
 export default function Homepage() {
   return (
     <div>
-      <h1 className="text-4xl font-modern font-semibold">Homepage</h1>
       <HeroSection
         heading="Kompetente Beratung vor Ort"
         sh="Verträge, Handys, Laptobs, Smart Home,..."
