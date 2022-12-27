@@ -159,7 +159,7 @@ export default (
   return {
     tone: "critical",
     dialog: dialogOpen && dialog,
-    icon: TrashIcon,
+    //icon: TrashIcon,
     label: "Delete",
     onHandle: () => setDialogOpen(true),
     shortcut: "Ctrl+Alt+D",
