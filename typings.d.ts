@@ -64,3 +64,14 @@ interface Title {
   _type: "string";
   asset: string;
 }
+
+interface Product extends Base {
+  author: Author;
+  body: Block[];
+  categories: Category[];
+  mainImage: Image;
+  slug: Slug;
+  title: string;
+  intro: string;
+  description: string;
+}

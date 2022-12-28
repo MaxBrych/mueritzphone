@@ -11,7 +11,7 @@ export default function Homepage() {
         sh="Verträge, Handys, Laptobs, Smart Home,..."
         cta="Termin Holen"
         href="/"
-        src="/../public/assets/Phone.png"
+        src="https://cdn.sanity.io/images/b2azodur/production/075f90cc60b8e43ba745972f13de7ced733cb055-656x664.png"
       />
       <Section
         sh="Jetzt Geöffnet"
@@ -20,7 +20,7 @@ export default function Homepage() {
         descr="Für mehr Verbundenheit wir kümmern uns!"
         CTA="Unsere Services"
         link="/"
-        image="/../public/assets/Phone.png"
+        image="https://cdn.sanity.io/images/b2azodur/production/075f90cc60b8e43ba745972f13de7ced733cb055-656x664.png"
       />
       <CardSection sh="Vertrauen" h="vertraucen" />
     </div>

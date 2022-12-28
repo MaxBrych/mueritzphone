@@ -10,7 +10,12 @@ function Header() {
     <div className="fixed top-0 z-50 w-full md:static">
       <nav className="flex items-center justify-between h-16 px-4 text-gray-900 bg-white border-b-2 border-gray-200 md:px-16 ">
         <Link href="/">
-          <Image src="/../public/Logo.png" alt="Logo" width={112} height={16} />
+          <Image
+            src="https://cdn.sanity.io/images/b2azodur/production/232fe14242678236ac12f6e1fc494a2076592b6d-450x128.png"
+            alt="Logo"
+            width={112}
+            height={16}
+          />
         </Link>
         <HiMenuAlt4 style={style} className="invisible" />
         <ul className="flex items-center">
