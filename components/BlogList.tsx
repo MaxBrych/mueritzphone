@@ -27,7 +27,7 @@ export default function BlogList({ posts }: Props) {
                   alt={post.title}
                   fill
                 />
-                <div className="invisible absolute bottom-0 flex justify-between w-full p-5  bg-black bg-opacity-20 rounded-b-2xl">
+                <div className="absolute bottom-0 flex justify-between invisible w-full p-5 bg-black bg-opacity-20 rounded-b-2xl">
                   <div>
                     <p className="text-lg font-bold">{post.title}</p>
                     <p>
@@ -41,7 +41,7 @@ export default function BlogList({ posts }: Props) {
                 </div>
               </div>
               <div className="flex-1 mt-4 ">
-                <h1 className="text-xl font-semibold leading-5 mb-1">
+                <h1 className="mb-1 text-xl font-semibold leading-5">
                   {post.title}
                 </h1>
                 <p className="line-clamp-3">{post.description}</p>

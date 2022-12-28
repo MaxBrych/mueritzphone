@@ -18,9 +18,9 @@ function Header() {
           />
         </Link>
         <HiMenuAlt4 style={style} className="invisible" />
-        <ul className="flex items-center">
+        <ul className="flex justify-center">
           <li>
-            <Link href="/" className="py-1 rounded-full hover:bg-gray-100">
+            <Link href="/" className="px-3 py-1 rounded-full hover:bg-gray-100">
               Home
             </Link>
           </li>
@@ -38,6 +38,14 @@ function Header() {
               className="px-3 py-1 rounded-full hover:bg-gray-100"
             >
               Blog
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="./produkte"
+              className="px-3 py-1 rounded-full hover:bg-gray-100"
+            >
+              Produkte
             </Link>
           </li>
         </ul>

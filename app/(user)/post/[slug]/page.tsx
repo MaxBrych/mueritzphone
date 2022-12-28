@@ -6,6 +6,8 @@ import { PortableText } from "@portabletext/react";
 import { RichTextComponents } from "../../../../components/RichTextComponents";
 import Link from "next/link";
 import { MdArrowBackIosNew } from "react-icons/md";
+import BlogList from "../../../../components/BlogList";
+import RecentPosts from "../../../../components/RecentPosts";
 
 type Props = {
   params: {
@@ -29,7 +31,7 @@ export async function generateStaticParams() {
   }));
 }
 
-async function Post({ params: { slug } }: Props) {
+export default async function Post({ params: { slug } }: Props) {
   const query = groq`
   *[_type == 'post' && slug.current == $slug] [0]
   {
@@ -45,9 +47,7 @@ async function Post({ params: { slug } }: Props) {
       <div className="mt-8 md:py-18 sm:w-2/3">
         <div className="px-4 pt-16 md:pt-0">
           <div>
-            <h1 className=" font-semibold text-5xl md:text-5xl">
-              {post.title}
-            </h1>
+            <h1 className="text-5xl font-semibold md:text-5xl">{post.title}</h1>
             <div className="flex justify-between py-6 sm:py-8 ">
               <div className="flex flex-row align-top">
                 <Image
@@ -57,10 +57,7 @@ async function Post({ params: { slug } }: Props) {
                   width={40}
                   height={40}
                 />
-                <p className="px-2 font-semibold  text-m">
-                  {" "}
-                  {post.author.name}
-                </p>
+                <p className="px-2 font-semibold text-m"> {post.author.name}</p>
               </div>
               <p className="">
                 {new Date(post._createdAt).toLocaleDateString("en-US", {
@@ -89,14 +86,12 @@ async function Post({ params: { slug } }: Props) {
         <div className="absolute right-6 top-24">
           <h1 className="invisible md:visible">Sidebar</h1>
         </div>
-        <div className="absolute left-4 top-20 sm:left-6 sm:top-24 invisible md:visible">
+        <div className="absolute invisible left-4 top-20 sm:left-6 sm:top-24 md:visible">
           <Link href="/blog">
-            <MdArrowBackIosNew className="w-12 h-12 p-3  border border-gray-400 rounded-full hover:bg-gray-100" />
+            <MdArrowBackIosNew className="w-12 h-12 p-3 border border-gray-400 rounded-full hover:bg-gray-100" />
           </Link>
         </div>
       </div>
     </div>
   );
 }
-
-export default Post;

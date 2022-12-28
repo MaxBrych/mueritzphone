@@ -8,7 +8,9 @@ import ProductList from "../../../components/ProductList";
 
 const query = groq`
 *[_type=='product']{
-  store->,
+  store{
+    ...,
+  }
 } 
 `;
 

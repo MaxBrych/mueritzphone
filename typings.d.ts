@@ -66,12 +66,20 @@ interface Title {
 }
 
 interface Product extends Base {
-  author: Author;
-  body: Block[];
+  store: StoreTitle;
   categories: Category[];
-  mainImage: Image;
   slug: Slug;
   title: string;
   intro: string;
   description: string;
+}
+
+interface StoreTitle {
+  id: Key | null | undefined;
+  slug: any;
+  previewImageUrl: string | StaticImport;
+  title: ReactNode;
+  descriptionHtml: ReactNode;
+  _type: "string";
+  asset: string;
 }
